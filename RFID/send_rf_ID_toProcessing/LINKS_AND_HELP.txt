@@ -1,0 +1,18 @@
+RFID tutorial
+https://www.youtube.com/watch?v=hxSQmTkIGAs
+
+
+Mifare RC522:
+
+RC522 specs (important links below)
+http://www.hotmcu.com/mifare-1356mhz-rc522-rfid-card-reader-module-p-84.html
+
+RC522 Sample code for Arduino:
+http://www.haoyuelectronics.com/Attachment/MFRC-522/Mifare_RC522_Arduino_Example.zip
+
+NXP RC522 Datasheet:
+http://www.nxp.com/documents/data_sheet/MFRC522.pdf
+
+
+RC522 Library for Arduino:
+https://github.com/miguelbalboa/rfid
