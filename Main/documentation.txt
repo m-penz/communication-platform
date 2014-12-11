@@ -1,0 +1,4 @@
+Lo-Fi prototype of the concept presented on the previous page. How can adjustable, transparent layers be used to support idea generation. At the same time we explored if mobile phones can be used to record audio snippets. 
+
+A marker, displayed on the phone would allow tracking the position of the phone on the table by scanning the table from below. When a user wants to capture an audio recording, she would move the phone to the respective 
+position on the lowest level of the board (see image top left). When the phone stops moving, 15 seconds of audio are recorded by the phone. Additionally the phones' flash light is used to highlight the areas above. The prototype for the phone was developed for Android that uses the phones accelerometer data and sends a request to a laptop handling the audio recording.

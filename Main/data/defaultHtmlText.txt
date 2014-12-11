@@ -1,0 +1,54 @@
+<html>
+<body>
+<audio id="audio1" src="files/soundclip_2.wav"></audio>
+<audio id="audio2" src="files/soundclip_4.wav"></audio>
+<audio id="audio3" src="files/soundclip_6.wav"></audio>
+
+<div>
+  <img class= "btn" id = "one" src="files/button.svg"  onclick="document.getElementById('audio1').play()" />
+  <img class= "btn" id = "two" src="files/button.svg"  onclick="document.getElementById('audio2').play()" />
+  <img class= "btn" id = "three" src="files/button.svg"  onclick="document.getElementById('audio3').play()" />  
+</div>
+</audio>
+</body>
+</html>
+<style>
+body {
+    background-image: url('files/background.svg');
+    background-repeat: no-repeat;
+}
+#one {
+	position: absolute;
+	top:343px;
+	left:197px;
+}
+#two {
+	position: absolute;
+	top:343px;
+	left: 950px;
+}
+#three {
+	position: absolute;
+	top:420px;
+	left:408px;
+}
+#four {
+	position: absolute;
+	top:180mm;
+	left:155mm;
+}
+#five {
+	position: absolute;
+	top:150mm;
+	left:185mm;
+}
+#six {
+	position: absolute;
+	top:180mm;
+	left:215mm;
+}
+.btn {
+	width: 40px;
+	height: 40px;
+}
+</style>
