@@ -1,4 +1,7 @@
 class FinishTracker {
+  //tracks a specific region on the board. Clicking on it with the stamp will end the session and upload all the files
+  
+  
   int finWidth=500;
   int finHeight=500;
   StampHandler stampHandler;
