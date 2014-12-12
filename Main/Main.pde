@@ -38,7 +38,7 @@ void initHandlers() {
   stampHandler= new StampHandler(this, cursor, ftpHandler);
   finTracker=new FinishTracker(stampHandler, htmlHandler);
   demoHandler = new DemoHandler();
-  tracker=new CameraTracker(this, 61, cursor,finTracker);//147
+  tracker=new CameraTracker(this, 3, cursor,finTracker);//147
   tracker.setShadowEvent(artefats);
   tracker.setLaserEvent(stampHandler);
   new Thread(ftpHandler).start();
