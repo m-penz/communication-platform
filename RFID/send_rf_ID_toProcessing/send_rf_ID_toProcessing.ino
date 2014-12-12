@@ -131,6 +131,7 @@ void loop() {
     Serial.print("Card UID:");
     dump_byte_array(mfrc522.uid.uidByte, mfrc522.uid.size);
     Serial.println();
+delay(2000);
     /*Serial.print("PICC type: ");
     byte piccType = mfrc522.PICC_GetType(mfrc522.uid.sak);
     Serial.println(mfrc522.PICC_GetTypeName(piccType));
