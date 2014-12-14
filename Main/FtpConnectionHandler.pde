@@ -14,7 +14,11 @@ class FtpConnectionHandler implements Runnable {
   String sessionDir="";
   String userName="standab9";
   String password="LJnFkp9F";
+<<<<<<< HEAD
   String pathToLocaleFileDir="Users/mahdisaliasgari/Documents/communication-platform/Main/file/";
+=======
+  String pathToLocaleFileDir="C:\\Users\\M\\Dropbox\\DataSync\\prototype_boras_DB\\file\\";
+>>>>>>> e479002a79b473e60d55f1b75c0330d5fdff0574
 
   public void run() {
     connectFTP();
