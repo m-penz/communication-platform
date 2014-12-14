@@ -14,7 +14,7 @@ class FtpConnectionHandler implements Runnable {
   String sessionDir="";
   String userName="standab9";
   String password="LJnFkp9F";
-  String pathToLocaleFileDir="/Users/mahdisaliasgari/Documents/communication-platform/Main/file/";
+  String pathToLocaleFileDir="Users/mahdisaliasgari/Documents/communication-platform/Main/file/";
 
   public void run() {
     connectFTP();
@@ -130,4 +130,3 @@ class FtpConnectionHandler implements Runnable {
     }
   }
 }
-
