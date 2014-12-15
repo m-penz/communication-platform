@@ -45,7 +45,8 @@ class HtmlHandler {
     for (Clip c : clipList) {
       String clipToHtml = soundplaceholder;
       clipToHtml= clipToHtml.replaceAll("SOUNDVARIABLE", c.getId().substring(5));
-      clipToHtml= clipToHtml.replaceAll("SOUNDFILE", c.getFileName().substring(5));
+
+      
       clipToHtml= clipToHtml.replaceAll("TOPOFFSET", ""+(c.getY()-20));
       clipToHtml= clipToHtml.replaceAll("LEFTOFFSET", ""+(c.getX()-20));
       println(clipToHtml);

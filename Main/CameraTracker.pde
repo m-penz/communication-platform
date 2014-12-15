@@ -5,8 +5,8 @@ import java.awt.event.KeyEvent;
 
 class CameraTracker {
   Capture video;
-  int yOffsetFromTable= 200;
-  int xOffsetFromTable=140;
+  int yOffsetFromTable= 120;
+  int xOffsetFromTable=60;
 
   //**************** SHADOW *************
   int distance=60;

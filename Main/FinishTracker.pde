@@ -2,8 +2,8 @@ class FinishTracker {
   //tracks a specific region on the board. Clicking on it with the stamp will end the session and upload all the files
   //rename this lass
   
-  int finWidth=500;
-  int finHeight=500;
+  int finWidth=600;
+  int finHeight=600;
   StampHandler stampHandler;
   HtmlHandler htmlHandler;
   FtpConnectionHandler ftpHandler;
