@@ -1,5 +1,6 @@
 import java.sql.Timestamp;
 import java.util.Date;
+import java.io.File;
 
 class FtpConnectionHandler implements Runnable {
   // Declare a new FTPClient
@@ -14,7 +15,9 @@ class FtpConnectionHandler implements Runnable {
   String sessionDir="";
   String userName="standab9";
   String password="LJnFkp9F";
-  String pathToLocaleFileDir="C:\\Users\\M\\Dropbox\\DataSync\\prototype_boras_DB\\file\\";
+  String pathToLocaleFileDir=""+File.separator+"Users"+File.separator+"mahdisaliasgari"+File.separator+"Documents"+File.separator+"communication-platform"+File.separator+"Main"+File.separator+"file"+File.separator+"";
+
+  //String pathToLocaleFileDir="C:\\Users\\M\\Dropbox\\DataSync\\prototype_boras_DB\\file\\";
 
 
   public void run() {
