@@ -5,8 +5,8 @@ import java.awt.event.KeyEvent;
 
 class CameraTracker {
   Capture video;
-  int yOffsetFromTable= 80;
-  int xOffsetFromTable=40;
+  int yOffsetFromTable= 110;
+  int xOffsetFromTable=60;
 
   //**************** SHADOW *************
   int distance=60;
@@ -26,7 +26,7 @@ class CameraTracker {
   // Start off tracking for red
   LaserTracker laserTracker;
   color trackColor = color(233, 29, 61);
-  int laserThreshold = 90;
+  int laserThreshold = 190;
   boolean clicked=false;
 
   int cameraIndex;

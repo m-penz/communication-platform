@@ -48,7 +48,7 @@ class LaserTracker {
       finalPoint.setPoint(-10, -10);
     }
     //println("*********************");
-    //println("DONE TRACKING: finalPoint x: "+finalPoint.x+" y: "+finalPoint.y);
+    //println("doneButton TRACKING: finalPoint x: "+finalPoint.x+" y: "+finalPoint.y);
     
   }
   public void stampTriggered() {
@@ -60,7 +60,7 @@ class LaserTracker {
       if(checkFinishedTrigger()){
         rect(400,400,400,400);
         redraw();
-        finTracker.sessionFinished();
+        finTracker.setSessionFinished();
       }else{
         event.colorDetected(finalPoint.x, finalPoint.y); 
       }
