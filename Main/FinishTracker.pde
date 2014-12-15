@@ -16,7 +16,7 @@ class FinishTracker {
     this.ftpHandler=ftpHandler;
 
     doneButton = loadShape("doneButton.svg");
-    doneNotifier= loadShape("doneNotifier.svg");
+    doneNotifier= loadShape("doneNotification.svg");
   }
   public void doDraw() {
     //strokeWeight(8);
@@ -30,6 +30,8 @@ class FinishTracker {
     }
   }
   public void setSessionFinished(){
+    doneNotifier.disableStyle();
+    shape(doneNotifier,400,400,600,300);
     isSessionFinished=true;
   }
   // returns the width that is being tracked from 0 to return value
