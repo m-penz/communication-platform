@@ -59,6 +59,7 @@ class LaserTracker {
       //drawPoint(finalPoint, color(0, 0, 255));
       if(checkFinishedTrigger()){
         rect(400,400,400,400);
+        redraw();
         finTracker.sessionFinished();
       }else{
         event.colorDetected(finalPoint.x, finalPoint.y); 

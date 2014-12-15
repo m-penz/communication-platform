@@ -2,8 +2,10 @@ class FinishTracker {
   //tracks a specific region on the board. Clicking on it with the stamp will end the session and upload all the files
   //rename this lass
   PShape done;
-  int finWidth=200;
-  int finHeight=200;
+  int finWidth=150;
+  int finHeight=150;
+  int xOffset=25;
+  int yOffset=165;
   StampHandler stampHandler;
   HtmlHandler htmlHandler;
   FtpConnectionHandler ftpHandler;
@@ -17,16 +19,16 @@ class FinishTracker {
   public void doDraw() {
     //strokeWeight(8);
    // ellipse(0, 0, finWidth, finHeight);
-    strokeWeight(1);
-    shape(done, finWidth,finWidth, finWidth, finWidth);
-    
+   done.disableStyle();
+    strokeWeight(1.5);
+    shape(done,xOffset,yOffset, finWidth, finWidth);
   }
   // returns the width that is being tracked from 0 to return value
   public int getTrackRangeX() {
-    return (int)finWidth*2;
+    return (int)finWidth+xOffset;
   }
   public int getTrackRangeY() {
-    return (int) finHeight*2;
+    return (int) finHeight+yOffset;
   }
 
   public void sessionFinished() {    

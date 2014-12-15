@@ -5,12 +5,12 @@ import java.awt.event.KeyEvent;
 
 class CameraTracker {
   Capture video;
-  int yOffsetFromTable= 120;
-  int xOffsetFromTable=60;
+  int yOffsetFromTable= 80;
+  int xOffsetFromTable=40;
 
   //**************** SHADOW *************
   int distance=60;
-  float brightnessThreshold=82;
+  float brightnessThreshold=70;
   ShadowTracker shadowTracker;
 
   // TIMING

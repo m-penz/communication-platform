@@ -102,7 +102,7 @@ class MyVoronoi {
       this.x=x;
       this.y=y;
       c_target = color((int)random(colorMin, colorMax));
-      c_is=255;
+      c_is=200;
       vel = new PVector(random(-SITE_MAX_VEL, SITE_MAX_VEL), random(-SITE_MAX_VEL, SITE_MAX_VEL));
     }
 
