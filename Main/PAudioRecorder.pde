@@ -86,7 +86,7 @@ class PAudioRecorder {
     {
       recorder.endRecord();
       recorder.save();
-      println("Done saving.");      
+      println("doneButton saving.");      
       ftpHanlder.uploadFile("soundclip_" + countname + ".wav");
     }
   }
