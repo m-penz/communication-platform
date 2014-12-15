@@ -70,7 +70,7 @@ class StampHandler implements ColorEventHandler {
     }
   }
   public void clearStage(){
-   clipList=new ArrayList<Clip>();i
+   clipList=new ArrayList<Clip>();
   }
   public int getCountName() {
     return audioRec.getCountName();
