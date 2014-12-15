@@ -58,7 +58,7 @@ class PAudioRecorder {
   public void setStopAfterKey() {
     stopAutomatic=false;
   }
-
+//The file is uploaded after saving.
   void doDraw()
   {
     if (recorder.isRecording()) {
@@ -81,7 +81,7 @@ class PAudioRecorder {
     this.recTime=millis();
     return fileName;
   }
-  public void stopRecordingAndSave() {
+  private void stopRecordingAndSave() {
     if ( recorder.isRecording() ) 
     {
       recorder.endRecord();

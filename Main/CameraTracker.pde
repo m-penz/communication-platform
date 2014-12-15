@@ -5,18 +5,18 @@ import java.awt.event.KeyEvent;
 
 class CameraTracker {
   Capture video;
-  int yOffsetFromTable=130;
-  int xOffsetFromTable=80;
+  int yOffsetFromTable= 200;
+  int xOffsetFromTable=140;
 
   //**************** SHADOW *************
-  int distance=45;
-  float brightnessThreshold=50;
+  int distance=60;
+  float brightnessThreshold=82;
   ShadowTracker shadowTracker;
 
   // TIMING
   float lastTime;
   // time to wait before the video array is checked again
-  float waitingTime=500;
+  float waitingTime=200;
 
   // CALLIBRATION 
   boolean callibrationRect=false;
@@ -25,8 +25,8 @@ class CameraTracker {
   //************** LASER *******************
   // Start off tracking for red
   LaserTracker laserTracker;
-  color trackColor = color(160, 64, 110);
-  int laserThreshold = 50;
+  color trackColor = color(233, 29, 61);
+  int laserThreshold = 90;
   boolean clicked=false;
 
   int cameraIndex;
@@ -43,7 +43,7 @@ class CameraTracker {
     shadowTracker = new ShadowTracker(distance, xOffsetFromTable, yOffsetFromTable);
     shadowTracker.setBrightnessThreshold(brightnessThreshold);
     laserTracker= new LaserTracker(trackColor, laserThreshold, xOffsetFromTable, yOffsetFromTable, finTracker);
-
+    
     lastTime=0;
     String[] cameras = Capture.list();
     if (cameras.length == 0) {
@@ -110,9 +110,12 @@ class CameraTracker {
     callibrationRect=!callibrationRect;
   }
   void doKeyPressed() {
+    if(!laserTracker.checkVideoDimSet()){
+      laserTracker.setVideoDim(video.width,video.height);
+    }
     video.loadPixels();
     int[] pixelArr= video.pixels;
-    laserTracker.trackLaser(video, pixelArr);
+    laserTracker.trackLaser( pixelArr);
     println("PGUP");
   }
   void doKeyReleased() {

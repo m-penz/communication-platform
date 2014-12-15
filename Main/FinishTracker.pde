@@ -1,14 +1,16 @@
 class FinishTracker {
   //tracks a specific region on the board. Clicking on it with the stamp will end the session and upload all the files
-  
+  //rename this lass
   
   int finWidth=500;
   int finHeight=500;
   StampHandler stampHandler;
   HtmlHandler htmlHandler;
-  public FinishTracker(StampHandler stampHandler, HtmlHandler htmlHandler) {
+  FtpConnectionHandler ftpHandler;
+  public FinishTracker(StampHandler stampHandler, HtmlHandler htmlHandler,FtpConnectionHandler ftpHandler) {
     this.stampHandler=stampHandler;
     this.htmlHandler=htmlHandler;
+    this.ftpHandler=ftpHandler;
   }
   public void doDraw() {
     strokeWeight(8);
@@ -27,6 +29,8 @@ class FinishTracker {
     //safe last picture
     int currentCountName = stampHandler.getCountName();
     htmlHandler.generateAndUpload(currentCountName, stampHandler.getClipList());
+    stampHandler.clearStage();
+    ftpHandler.makeNewDirOnServer();
   }
 }
 

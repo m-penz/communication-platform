@@ -24,7 +24,7 @@ void setup() {
     size(displayWidth, displayHeight);
   }
   else {
-    size(1280, 720);
+    size(1280,720);
   }
   noCursor();
   cursor = new MyCursor(); 
@@ -36,15 +36,17 @@ void initHandlers() {
   videoHandler=new VideoHandler(this);
   artefats= new ArtefactHandler(this);
   stampHandler= new StampHandler(this, cursor, ftpHandler);
-  finTracker=new FinishTracker(stampHandler, htmlHandler);
+  finTracker=new FinishTracker(stampHandler, htmlHandler,ftpHandler);
   demoHandler = new DemoHandler();
-  tracker=new CameraTracker(this, 3, cursor,finTracker);//147
+  
+  tracker=new CameraTracker(this, 5, cursor,finTracker);//147
   tracker.setShadowEvent(artefats);
   tracker.setLaserEvent(stampHandler);
   new Thread(ftpHandler).start();
   mode=Mode.SHADOW_CALLIBRATION;
   curVid=VideoEnum.VIDEO_PIL1;
 }
+
 
 void draw() { 
   clear();  
@@ -101,6 +103,13 @@ void keyReleased() {
     //safe last picture
     int currentCountName = stampHandler.getCountName();
     htmlHandler.generateAndUpload(currentCountName, stampHandler.getClipList());
+  }else if (key=='r') {
+    //produce and upload a html file htmlHandler?
+    //safe last picture
+    int currentCountName = stampHandler.getCountName();
+    htmlHandler.generateAndUpload(currentCountName, stampHandler.getClipList());
+    initHandlers();
+    
   }
   else if (key=='m') {
     tracker.incrementBrightnessThreshold();

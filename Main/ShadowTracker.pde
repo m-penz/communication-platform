@@ -25,7 +25,7 @@ class ShadowTracker {
     for (int x = xOffsetFromTable; x < video.width-xOffsetFromTable; x+=distance ) {
       for (int y = yOffsetFromTable; y < video.height-yOffsetFromTable; y+=distance ) {
         int loc = x + y*video.width;
-        color currentColor = video.pixels[loc];
+        color currentColor = video.pixels[loc];  
         evaluatePixel(x, y, result, currentColor);
       }
     }

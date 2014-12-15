@@ -30,6 +30,17 @@ class FtpConnectionHandler implements Runnable {
     quitFTP();
     uploadFile("button.svg");
   }
+  
+  public void makeNewDirOnServer(){
+    connectFTP();
+    java.util.Date date= new java.util.Date();
+    String sessionDirName=new Timestamp(date.getTime()).toString();
+    sessionDirName = sessionDirName.replace(" ", "_");
+    makeDir(sessionDirName);
+    sessionDir="/"+sessionDirName;   
+    quitFTP();
+    uploadFile("button.svg");
+  }
 
   public String makeDir(String name) {
     try

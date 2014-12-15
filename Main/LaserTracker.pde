@@ -8,6 +8,8 @@ class LaserTracker {
   Point finalPoint;
   float closestColor;
   FinishTracker finTracker;
+  int videoWidth,videoHeight;
+  boolean videoDimSet=false;
 
   public LaserTracker(color trackColor, int laserThreshold, int xOffsetFromTable, int yOffsetFromTable, FinishTracker finTracker) {
     this.trackColor=trackColor;
@@ -20,15 +22,25 @@ class LaserTracker {
   void setEvent( ColorEventHandler event) {
     this.event=event;
   }
+  void setVideoDim(int videoWidth, int videoHeight){
+    videoDimSet=true;
+    this.videoWidth=videoWidth;
+    this.videoHeight=videoHeight;
+    println("inLaserTracker: videoHeight: "+videoHeight+" videoWidth:"+videoWidth);
+  }
+  boolean checkVideoDimSet(){
+    return videoDimSet;
+  }
 
-  void trackLaser(Capture video, int[] pixelArr) {
+  void trackLaser(int[] pixelArr) {
     this.video=video;
     closestColor=2000;
     finalPoint=new Point(-10, -10);
-    for (int x = xOffsetFromTable; x < video.width-xOffsetFromTable; x+=5 ) {
-      for (int y = yOffsetFromTable; y < video.height-yOffsetFromTable; y+=5 ) {
-        int loc = x + y*video.width;
+    for (int x = xOffsetFromTable; x < videoWidth-xOffsetFromTable; x+=6 ) {
+      for (int y = yOffsetFromTable; y < videoHeight-yOffsetFromTable; y+=6 ) {
+        int loc = x + y*videoWidth;
         color currentColor = pixelArr[loc];
+        
         evaluatePixel(x, y, currentColor);
       }
     }
@@ -47,6 +59,7 @@ class LaserTracker {
       //drawPoint(finalPoint, color(0, 0, 255));
       if(checkFinishedTrigger()){
         finTracker.sessionFinished();
+        rect(400,400,400,400);
       }else{
         event.colorDetected(finalPoint.x, finalPoint.y); 
       }
@@ -67,9 +80,6 @@ class LaserTracker {
   }
 
   public void evaluatePixel(int x, int y, color currentColor) {
-
-    x = (int) round(map(x, 0, video.width, 0, width));    
-    y = (int) round(map(y, 0, video.height, 0, height));
 
     float r1 = red(currentColor);
     float g1 = green(currentColor);

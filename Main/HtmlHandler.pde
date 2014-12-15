@@ -42,7 +42,7 @@ class HtmlHandler {
 
   private void writeHtml() {
     output.println(prefix);
-    for (Clip c: clipList) {
+    for (Clip c : clipList) {
       String clipToHtml = soundplaceholder;
       clipToHtml= clipToHtml.replaceAll("SOUNDVARIABLE", c.getId().substring(5));
       clipToHtml= clipToHtml.replaceAll("SOUNDFILE", c.getFileName().substring(5));
@@ -62,7 +62,7 @@ class HtmlHandler {
   private String loadDefaultContent() {
     String lines[] = loadStrings("defaultHtmlText.txt");
     String ret="";
-    for (int i=0;i<lines.length;i++) {
+    for (int i=0; i<lines.length; i++) {
       ret+="\n"+lines[i];
     }
     return ret;

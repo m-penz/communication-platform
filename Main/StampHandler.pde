@@ -69,6 +69,9 @@ class StampHandler implements ColorEventHandler {
       bezier(thisNode.getX(), thisNode.getY(), thisNode.getOutgoingX(), thisNode.getOutgoingY(), nextNode.getIngoingX(), nextNode.getIngoingY(), nextNode.getX(), nextNode.getY());
     }
   }
+  public void clearStage(){
+   clipList=new ArrayList<Clip>();
+  }
   public int getCountName() {
     return audioRec.getCountName();
   }
