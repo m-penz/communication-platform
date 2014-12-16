@@ -58,8 +58,6 @@ class LaserTracker {
       // Draw a circle at the tracked pixel
       //drawPoint(finalPoint, color(0, 0, 255));
       if(checkFinishedTrigger()){
-        rect(400,400,400,400);
-        redraw();
         finTracker.setSessionFinished();
       }else{
         event.colorDetected(finalPoint.x, finalPoint.y); 
