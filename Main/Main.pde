@@ -15,6 +15,7 @@ DemoHandler demoHandler;
 Mode mode;
 CameraTracker tracker;
 MyCursor cursor;
+AutosaveThread autosaveThread;
 
 // *************   CHANGE PRESENTATION / WORK mode *************
 boolean presentationMode=true;
@@ -29,6 +30,8 @@ void setup() {
   noCursor();
   cursor = new MyCursor(); 
   initHandlers();
+  autosaveThread= new AutosaveThread(finTracker);
+  autosaveThread.run();
 }
 void initHandlers() {
   ftpHandler= new FtpConnectionHandler();
@@ -109,7 +112,6 @@ void keyReleased() {
     int currentCountName = stampHandler.getCountName();
     htmlHandler.generateAndUpload(currentCountName, stampHandler.getClipList());
     initHandlers();
-    
   }
   else if (key=='m') {
     tracker.incrementBrightnessThreshold();
@@ -179,4 +181,3 @@ void movieEvent(Movie m) {
 boolean sketchFullScreen() {
   return presentationMode;
 }
-
