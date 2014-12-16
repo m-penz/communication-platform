@@ -44,7 +44,7 @@ class FinishTracker {
     if (noRecordings) {
       noRecDur--;
       strokeWeight(0);
-      shape(noRecordingsShape, finNotXOffset, 120, 400, 400);
+      shape(noRecordingsShape, finNotXOffset, 220, 400, 400);
       if (noRecDur<0)
         noRecordings=false;
     }

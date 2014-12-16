@@ -19,7 +19,7 @@ class PAudioRecorder {
   {
     this.ftpHanlder=ftpHandler;
     minim = new Minim(a);
-    in = minim.getLineIn(Minim.STEREO, 2048);
+    in = minim.getLineIn(Minim.MONO, 512);
     newFile();
   }
 
