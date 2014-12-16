@@ -30,7 +30,7 @@ class FinishTracker {
     }
   }
   public void setSessionFinished(){
-    doneNotifier.disableStyle();
+    strokeWeight(0);
     shape(doneNotifier,400,400,600,300);
     isSessionFinished=true;
   }
