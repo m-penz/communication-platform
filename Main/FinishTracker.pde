@@ -29,7 +29,7 @@ class FinishTracker {
 
     doneButton = loadShape("doneButton.svg");
     doneNotifier= loadShape("doneNotification.svg");
-    noRecordingsShape=loadShape("noRecording.svg");
+    noRecordingsShape=loadShape("noRecordings.svg");
   }
   public void doDraw() {
     //strokeWeight(8);
@@ -44,7 +44,7 @@ class FinishTracker {
     if (noRecordings) {
       noRecDur--;
       strokeWeight(0);
-      shape(noRecordingsShape, finNotXOffset, finNotYOffset, finNotWidth, finNotHeight);
+      shape(noRecordingsShape, finNotXOffset, 120, 400, 400);
       if (noRecDur<0)
         noRecordings=false;
     }

@@ -10,7 +10,7 @@ class AutosaveThread extends Thread{
       this.finTracker=finTracker;
       autosaveTask=new AutosaveTask(finTracker);
       
-      delay= 1;
+      delay= 30;
       //interval of 20 minutes
       interval=20;
     }
