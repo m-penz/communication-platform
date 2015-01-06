@@ -4,8 +4,8 @@ class FinishTracker {
   PShape doneButton, doneNotifier, noRecordingsShape;
   int finButtonWidth=150;
   int finButtonHeight=150;
-  int xButtonOffset=25;
-  int yButtonOffset=165;
+  int xButtonOffset=75;
+  int yButtonOffset=175;
 
   int finNotWidth=500;
   int finNotHeight=finNotWidth/2;

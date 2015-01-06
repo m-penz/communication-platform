@@ -9,8 +9,8 @@ class CameraTracker {
   int xOffsetFromTable=60;
 
   //**************** SHADOW *************
-  int distance=60;
-  float brightnessThreshold=70;
+  int distance=40;
+  float brightnessThreshold=65;
   ShadowTracker shadowTracker;
 
   // TIMING
@@ -26,7 +26,7 @@ class CameraTracker {
   // Start off tracking for red
   LaserTracker laserTracker;
   color trackColor = color(233, 29, 61);
-  int laserThreshold = 190;
+  int laserThreshold = 100;
   boolean clicked=false;
 
   int cameraIndex;
